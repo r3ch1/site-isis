@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1a365d;
+  --color-secondary: #c53030;
+  --color-accent: #d69e2e;
+  --color-light: #f7fafc;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Preflight do Tailwind zera padding em form elements; forçamos aqui para ter espaço interno */
+input,
+select,
+textarea {
+  padding: 0.875rem 1.25rem !important;
+}
+
+:root {
+  --primary: #1a365d;
+  --secondary: #c53030;
+  --accent: #d69e2e;
+  --light: #f7fafc;
+  --dark: #2d3748;
+  --gray: #718096;
+  --transition: all 0.3s ease;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Full-page scroll: cada seção “para” em uma tela */
+.snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+  min-height: 100dvh;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--dark);
+  line-height: 1.6;
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
+  position: relative;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 1rem 2rem;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  background: var(--secondary);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 1rem;
+  line-height: 1.5;
+  min-height: 2.75rem;
+}
+
+.btn:hover {
+  background: #9b2c2c;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.btn-primary {
+  background: var(--primary);
+}
+
+.btn-primary:hover {
+  background: #2c5282;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+  color: var(--primary);
+  position: relative;
+}
+
+.section-title:after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  margin: 15px auto;
+}
+
+/* Utilitário para limitar linhas de texto */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+}
