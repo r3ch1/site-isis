@@ -15,13 +15,13 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm border-b border-white/10">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm border-b border-[var(--header-text)]/10">
       <div className="container flex items-center justify-between h-16 md:h-20">
         <Link href="#" className="flex items-center gap-2" onClick={() => setMenuOpen(false)}>
-          <span className="flex h-10 w-10 items-center justify-center rounded bg-white/10 text-white font-bold text-lg">
+          <span className="flex h-10 w-10 items-center justify-center rounded bg-[var(--header-text)]/10 text-[var(--header-text)] font-bold text-lg">
             {siteConfig.lawyerName.charAt(0)}
           </span>
-          <span className="text-white font-semibold text-sm md:text-base max-w-[140px] md:max-w-none">
+          <span className="text-[var(--header-text)] font-semibold text-sm md:text-base max-w-[140px] md:max-w-none">
             {siteConfig.fullTitle}
           </span>
         </Link>
@@ -31,14 +31,14 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="py-2 px-4 text-white/90 hover:text-white text-sm font-medium transition-colors rounded-md hover:bg-white/5"
+              className="py-2 px-4 text-[var(--header-text)]/90 hover:text-[var(--header-text)] text-sm font-medium transition-colors rounded-md hover:bg-[var(--header-text)]/5"
             >
               {link.label}
             </a>
           ))}
           <a
             href="#contato"
-            className="btn py-3 px-6 text-sm bg-accent hover:bg-amber-600 rounded-lg min-h-[2.75rem]"
+            className="btn py-3 px-6 text-sm bg-accent hover:bg-accent/90 rounded-lg min-h-[2.75rem] text-white"
           >
             Agendar consulta
           </a>
@@ -46,7 +46,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="md:hidden p-3 text-white rounded-md hover:bg-white/10 transition-colors"
+          className="md:hidden p-3 text-[var(--header-text)] rounded-md hover:bg-[var(--header-text)]/10 transition-colors"
           onClick={() => setMenuOpen((o) => !o)}
           aria-label="Abrir menu"
         >
@@ -61,13 +61,13 @@ export default function Header() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden bg-primary border-t border-white/10 py-4">
+        <div className="md:hidden bg-primary border-t border-[var(--header-text)]/10 py-4">
           <div className="container flex flex-col gap-3">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="py-3 px-4 text-white/90 hover:text-white rounded-md hover:bg-white/5"
+                className="py-3 px-4 text-[var(--header-text)]/90 hover:text-[var(--header-text)] rounded-md hover:bg-[var(--header-text)]/5"
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}
@@ -75,7 +75,7 @@ export default function Header() {
             ))}
             <a
               href="#contato"
-              className="btn py-3 px-5 mt-2 text-center bg-accent hover:bg-amber-600 rounded-lg"
+              className="btn py-3 px-5 mt-2 text-center bg-accent hover:bg-accent/90 rounded-lg text-white"
               onClick={() => setMenuOpen(false)}
             >
               Agendar consulta

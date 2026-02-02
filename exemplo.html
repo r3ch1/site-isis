@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Advocacia Trabalhista da Mulher</title>
+
+<style>
+    /* --------- VARIÁVEIS DE COR (mudarão via JS) ---------- */
+    :root {
+        --bg: #F4EFEA;
+        --text: #1A1A1A;
+        --header-bg: #5A1E2D;
+        --header-text: #F4EFEA;
+        --accent: #C47A3D;
+        --card-border: #5A1E2D;
+        --footer-bg: #111111;
+        --footer-text: #EEE;
+    }
+
+    body {
+        font-family: "Georgia", serif;
+        background: var(--bg);
+        color: var(--text);
+        margin: 0;
+        transition: all .4s ease;
+    }
+    header {
+        background: var(--header-bg);
+        color: var(--header-text);
+        padding: 40px;
+        text-align: center;
+        border-bottom: 6px solid var(--accent);
+        transition: all .4s ease;
+    }
+    h1 { margin: 0; }
+    section {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+    }
+    .card {
+        background: #FFFFFF;
+        padding: 25px;
+        border-left: 6px solid var(--card-border);
+        box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        transition: all .4s ease;
+    }
+    footer {
+        background: var(--footer-bg);
+        color: var(--footer-text);
+        text-align: center;
+        padding: 20px;
+        margin-top: 50px;
+        transition: all .4s ease;
+    }
+
+    /* Botões */
+    .palette-buttons {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .palette-buttons button {
+        margin: 5px;
+        padding: 10px 18px;
+        border: none;
+        cursor: pointer;
+        background: #333;
+        color: white;
+        border-radius: 6px;
+        font-size: 15px;
+        transition: .3s;
+    }
+    .palette-buttons button:hover {
+        transform: scale(1.05);
+        opacity: .8;
+    }
+</style>
+</head>
+
+<body>
+<header>
+    <h1>Defesa Trabalhista das Mulheres</h1>
+    <p>Advocacia comprometida com justiça, equidade e transformação social</p>
+</header>
+
+<div class="palette-buttons">
+    <button onclick="setPalette('materialista')">Feminismo Materialista</button>
+    <button onclick="setPalette('trabalhadora')">Mulher Trabalhadora</button>
+    <button onclick="setPalette('juridico')">Feminismo Jurídico</button>
+</div>
+
+<section>
+    <div class="card">
+        <h2>Sobre meu trabalho</h2>
+        <p>Atuo na defesa dos direitos trabalhistas das mulheres, enfrentando desigualdades estruturais causadas pelo capitalismo e pelo machismo no mercado de trabalho.</p>
+    </div>
+</section>
+
+<footer>
+    © 2026 - Advocacia das Mulheres
+</footer>
+
+<script>
+function setPalette(name) {
+    const root = document.documentElement;
+
+    if (name === "materialista") {
+        root.style.setProperty('--bg', '#F4EFEA');
+        root.style.setProperty('--text', '#1A1A1A');
+        root.style.setProperty('--header-bg', '#5A1E2D');
+        root.style.setProperty('--header-text', '#F4EFEA');
+        root.style.setProperty('--accent', '#C47A3D');
+        root.style.setProperty('--card-border', '#5A1E2D');
+        root.style.setProperty('--footer-bg', '#111111');
+        root.style.setProperty('--footer-text', '#EEE');
+    }
+
+    if (name === "trabalhadora") {
+        root.style.setProperty('--bg', '#EFE7DA');
+        root.style.setProperty('--text', '#3B2A22');
+        root.style.setProperty('--header-bg', '#C15B3E');
+        root.style.setProperty('--header-text', '#EFE7DA');
+        root.style.setProperty('--accent', '#5F6B4F');
+        root.style.setProperty('--card-border', '#C15B3E');
+        root.style.setProperty('--footer-bg', '#3B2A22');
+        root.style.setProperty('--footer-text', '#EFE7DA');
+    }
+
+    if (name === "juridico") {
+        root.style.setProperty('--bg', '#F7F5F2');
+        root.style.setProperty('--text', '#0F2A2E');
+        root.style.setProperty('--header-bg', '#0F2A2E');
+        root.style.setProperty('--header-text', '#F7F5F2');
+        root.style.setProperty('--accent', '#4B2C3A');
+        root.style.setProperty('--card-border', '#4B2C3A');
+        root.style.setProperty('--footer-bg', '#4B2C3A');
+        root.style.setProperty('--footer-text', '#F7F5F2');
+    }
+}
+</script>
+
+</body>
+</html>
