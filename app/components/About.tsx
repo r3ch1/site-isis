@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { siteConfig, whatsappUrl } from '../config/site'
 
 export default function About() {
@@ -33,10 +34,14 @@ export default function About() {
           </a>
         </div>
         <div className="flex-1 flex justify-center">
-          <div className="w-48 h-48 md:w-64 md:h-64 rounded-2xl bg-primary/10 flex items-center justify-center">
-            <span className="text-6xl md:text-7xl font-serif text-primary/30">
-              {siteConfig.lawyerName.charAt(0)}
-            </span>
+          <div className="relative w-48 h-64 sm:w-56 sm:h-72 md:w-64 md:h-80 rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src="/about3.png"
+              alt="Conheça o escritório - Dra. Isis Advogada Trabalhista"
+              width={256}
+              height={320}
+              className="object-fill w-full h-full"
+            />
           </div>
         </div>
       </div>

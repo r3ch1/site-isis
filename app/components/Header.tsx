@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import { siteConfig } from '../config/site'
 
@@ -18,11 +19,17 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm border-b border-[var(--header-text)]/10">
       <div className="container flex items-center justify-between h-16 md:h-20">
         <Link href="#" className="flex items-center gap-2" onClick={() => setMenuOpen(false)}>
-          <span className="flex h-10 w-10 items-center justify-center rounded bg-[var(--header-text)]/10 text-[var(--header-text)] font-bold text-lg">
-            {siteConfig.lawyerName.charAt(0)}
-          </span>
-          <span className="text-[var(--header-text)] font-semibold text-sm md:text-base max-w-[140px] md:max-w-none">
-            {siteConfig.fullTitle}
+          <Image
+            src="/logo-rosto.png"
+            alt={siteConfig.fullTitle || ''}
+            width={120}
+            height={120}
+            className="h-[5rem] w-[5rem] object-contain shrink-0"
+          />
+          <span className="text-[var(--header-text)] font-semibold text-sm md:text-base md:max-w-none">
+            {siteConfig.title}
+            <br />
+            {siteConfig.subtitle}
           </span>
         </Link>
 

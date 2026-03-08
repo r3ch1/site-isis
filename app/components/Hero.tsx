@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { siteConfig, whatsappUrl } from '../config/site'
 
 export default function Hero() {
@@ -47,11 +48,15 @@ export default function Hero() {
           </div>
         </div>
         <div className="flex-1 flex justify-center order-1 lg:order-2">
-          <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-2xl overflow-hidden bg-[var(--header-text)]/10 flex items-center justify-center shadow-2xl">
-            <span className="text-6xl sm:text-7xl md:text-8xl font-serif text-[var(--header-text)]/30">
-              {siteConfig.lawyerName.charAt(0)}
-            </span>
-            {/* Placeholder: substitua por uma imagem real com next/image */}
+          <div className="relative w-48 h-64 sm:w-56 sm:h-72 md:w-64 md:h-80 rounded-2xl overflow-hidden shadow-2xl">
+            <Image
+              src="/foto-perfil.jpeg"
+              alt={siteConfig.fullTitle || 'Dra. Isis - Advogada Trabalhista'}
+              width={256}
+              height={320}
+              className="object-cover w-full h-full"
+              priority
+            />
           </div>
         </div>
       </div>
